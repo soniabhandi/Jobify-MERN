@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Wrapper from "../assets/wrappers/LandingPage";
 import main from "../assets/images/main.svg";
 import { Link } from "react-router-dom";
-import Logo from "../pages/Logo";
+import { Logo } from "../components";
 
 const Landing = () => {
   return (

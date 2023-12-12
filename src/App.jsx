@@ -8,45 +8,57 @@ import {
   Login,
   DashboardLayout,
   Error,
+  AddJob,
+  AllJobs,
+  Stats,
+  Profile,
+  Admin,
 } from "./pages";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <h1>
-        <HomeLayout />
-      </h1>
-    ),
+    element: <HomeLayout />,
+    errorElement: <Error />,
     children: [
       {
         index: true,
         element: <Landing />,
-        errorElement: <Error />,
       },
       {
         path: "register",
-        element: (
-          <h1>
-            <Register />
-          </h1>
-        ),
+        element: <Register />,
       },
       {
         path: "login",
-        element: (
-          <h1>
-            <Login />
-          </h1>
-        ),
+        element: <Login />,
       },
       {
         path: "dashboard",
-        element: (
-          <h1>
-            <DashboardLayout />
-          </h1>
-        ),
+        element: <DashboardLayout />,
+        children: [
+          {
+            index: true,
+            element: <AddJob />,
+          },
+          {
+            path: "all-jobs",
+            element: <AllJobs />,
+          },
+          {
+            path: "profile",
+            element: <Profile />,
+          },
+          {
+            path: "admin",
+            element: <Admin />,
+          },
+
+          {
+            path: "stats",
+            element: <Stats />,
+          },
+        ],
       },
     ],
   },
